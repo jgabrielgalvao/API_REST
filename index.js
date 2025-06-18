@@ -23,6 +23,10 @@ db.connect((err) => {
   console.log('Conectado ao MySQL!');
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 // GET - Todos os empréstimos
 app.get('/emprestimos', (req, res) => {
   db.query('SELECT * FROM emprestimos ORDER BY data_emprestimo DESC', (err, results) => {
