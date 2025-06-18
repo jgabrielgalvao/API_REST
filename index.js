@@ -54,7 +54,7 @@ app.post('/emprestimos', (req, res) => {
 
 // DELETE - Deletar um empréstimo pelo ID
 app.delete('/emprestimos/:id', (req, res) => {
-  const id = req.params.id;
+  const id = 2;
 
   db.query('DELETE FROM emprestimos WHERE id = ?', [id], (err, result) => {
     if (err) return res.status(500).json({ erro: 'Erro ao deletar empréstimo' });
