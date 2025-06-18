@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 
 // GET - Todos os empréstimos
 app.get('/emprestimos', (req, res) => {
-  db.query('SELECT * FROM emprestimos ORDER BY data_emprestimo DESC', (err, results) => {
+  db.query('SELECT * FROM emprestimos', (err, results) => {
     if (err) return res.status(500).json({ erro: 'Erro ao buscar empréstimos' });
     res.json(results);
   });
