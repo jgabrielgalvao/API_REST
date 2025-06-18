@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 require('dotenv').config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -95,5 +95,5 @@ app.put('/emprestimos/:id', (req, res) => {
 
 // Iniciar servidor
 app.listen(port, '0.0.0.0', () => {
-    console.log('A Api está rodando')
-})
+    console.log(`API rodando na porta ${port}`);
+});
