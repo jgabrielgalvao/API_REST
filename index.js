@@ -70,6 +70,7 @@ app.delete('/emprestimos/:id', (req, res) => {
 // PUT - Atualizar um empréstimo pelo ID
 app.put('/emprestimos/:id', (req, res) => {
   const id = req.params.id;
+  console.log('id: ', id);
   const { nomeLivro, autor, dataEmprestimo, nomeLeitor } = req.body;
 
   if (!nomeLivro || !autor || !dataEmprestimo || !nomeLeitor) {
